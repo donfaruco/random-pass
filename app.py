@@ -3,7 +3,7 @@ import random
 import string
 
 app = Flask(__name__)
-API_VERSION = "1.2.3" 
+API_VERSION = "2.0.0" 
 
 @app.route('/generate-password', methods=['GET'])
 def generate_password():
