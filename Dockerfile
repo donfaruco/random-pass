@@ -19,5 +19,5 @@ EXPOSE 8000
 
 # Run the app
 #CMD ["python", "app.py"]
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "app:app"]
 
