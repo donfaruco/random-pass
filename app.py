@@ -3,7 +3,7 @@ import random
 import string
 
 app = Flask(__name__)
-API_VERSION = "2.0.0" 
+API_VERSION = "2.1.0" 
 
 @app.route('/generate-password', methods=['GET'])
 def generate_password():
@@ -40,6 +40,19 @@ def get_version():
         "api_name": "Secure Password Generator API",
         "version": API_VERSION,
         "status": "Production Ready"
+    }), 200
+
+# --- New Endpoint 3: Help with API usage ---
+@app.route('/help', methods=['GET'])
+def get_help():
+    """
+    Returns Help Info.
+    """
+    return jsonify({
+        "/generate-password": "generate random password",
+        "/health": "running status of API",
+        "/version": "Get version of API",
+        "/help": "Get info on available endpoints"
     }), 200
 
 if __name__ == '__main__':
